@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+.shadow {
+  height: 100px;
+  width: 100px;
+  box-shadow: 7px 5px 5px;
+}
+  </style>
+</head>
+<body>
+
+<img onclick="setRandomImg(this, '200px')" class="shadow">
+<img onclick="setRandomImg(this, '200px')" class="shadow">
+<img onclick="setRandomImg(this, '200px')" class="shadow">
+
+  <script>
+
+    function setRandomImg(imgElement,heightreq) {
+    let TerjeImg = getTerjeImg();
+    imgElement.src = TerjeImg;
+    imgElement.style.height = heightreq;
+    imgElement.style.width = heightreq;
+    }
+
+    function getTerjeImg() {
+      let randomNumber = Math.floor(Math.random() * 3)
+
+      if(randomNumber == 0) {
+        return 'terje1.jpg'
+      }
+      else if(randomNumber == 1) {
+        return 'terje2.jpg'
+      }
+      else {
+        return 'terje3.jpg'
+      }
+    }
+
+  </script>
+  
+</body>
+</html>
